@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
+
 class ProductCatalog extends Component {
     render() {
         return (
-            <ul className="nav productCatalogBg">
+            <ul className="nav">
                 <ul className="nav">
                     <li className="nav-item">
                         <a className="nav-link active" href="#">Electronics</a>
