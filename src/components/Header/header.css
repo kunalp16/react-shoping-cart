@@ -1,0 +1,16 @@
+.header {
+    background: #fff;
+    height: 110px;
+}
+
+.logo {
+    width: 100px;
+}
+
+a {
+    color: #000;
+}
+
+.list li{
+    border-left: 1px solid red;
+}

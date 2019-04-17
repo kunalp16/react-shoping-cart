@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-
+import Classes from '../ProductCatalog/productCatalog.css';
 
 class ProductCatalog extends Component {
     render() {
         return (
-            <ul className="nav">
+            <div className={Classes.catalog}>
                 <ul className="nav">
                     <li className="nav-item">
                         <a className="nav-link active" href="#">Electronics</a>
@@ -19,7 +19,7 @@ class ProductCatalog extends Component {
                         <a className="nav-link" href="#" >Kids</a>
                     </li>
                 </ul>
-            </ul>
+            </div>
         )
     };
 }
