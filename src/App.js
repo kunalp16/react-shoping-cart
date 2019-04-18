@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
-
-import { BrowserRouter } from 'react-router-dom';
-import { Route } from 'react-router-dom';
+import { Route, BrowserRouter } from 'react-router-dom';
 import './App.css';
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faCheckSquare, faCoffee, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+
 import Header from './components/Header/header';
-import Carousel from './components/carousel/carousel';
 import Footer from './components/Footer/footer';
-import Offerzone from './components/OfferZone/offerZone';
 import ProductCatalog from './components/ProductCatalog/productCatalog';
 import BannerAndOfferZone from './Container/BannerAndOfferzone/bannerNofferzone'
 import Login from './components/Login/login';
 import MyCart from './components/MyCart/myCart';
 import Wishlist from './components/Whishlist/wishlist';
 import Signup from './components/Signup/signup';
+
+library.add(fab, faCheckSquare, faCoffee, faTrashAlt)
+
 
 class App extends Component {
   render() {
