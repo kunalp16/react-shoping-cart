@@ -4,18 +4,18 @@ import './App.css';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faCheckSquare, faCoffee, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import { faCheckSquare, faCoffee, faTrashAlt, faStar, faHeart } from '@fortawesome/free-solid-svg-icons'
 
-import Header from './components/Header/header';
-import Footer from './components/Footer/footer';
-import ProductCatalog from './components/ProductCatalog/productCatalog';
+import Header from './Components/Header/header';
+import Footer from './Components/Footer/footer';
+import ProductCatalog from './Components/ProductCatalog/productCatalog';
 import BannerAndOfferZone from './Container/BannerAndOfferzone/bannerNofferzone'
-import Login from './components/Login/login';
-import MyCart from './components/MyCart/myCart';
-import Wishlist from './components/Whishlist/wishlist';
-import Signup from './components/Signup/signup';
+import Login from './Components/Login/login';
+import MyCart from './Components/MyCart/myCart';
+import Wishlist from './Components/WishList/wishlist';
+import Signup from './Components/Signup/signup';
 
-library.add(fab, faCheckSquare, faCoffee, faTrashAlt)
+library.add(fab, faCheckSquare, faCoffee, faTrashAlt, faStar, faHeart)
 
 
 class App extends Component {

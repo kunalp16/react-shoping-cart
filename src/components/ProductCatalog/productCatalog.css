@@ -2,6 +2,7 @@
     background: #FBA819;
     -webkit-box-shadow: 0px 4px 5px -3px rgba(0, 0, 0, 0.32);
     box-shadow: 0px 4px 5px -3px rgba(0, 0, 0, 0.32);
+    margin-bottom: 20px;
 }
 
 .catalog a {

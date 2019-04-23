@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Carousel from "../../components/carousel/carousel";
-import Offerzone from "../../components/OfferZone/offerZone";
+import Carousel from "../../Components/Carousel/carousel";
+import Offerzone from "../../Components/OfferZone/offerZone";
 
 
 class BannerAndOfferZone extends Component {
