@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Classes from '../Login/login.css';
 import Input from '../../UI/input/input';
 
-
 class Login extends Component {
     state = {
         loginForm: {
@@ -10,17 +9,26 @@ class Login extends Component {
                 elementType: 'input',
                 elementConfig: {
                     type: 'text',
-                    placeholder: 'Enter Email'
+                    placeholder: 'Email'
                 },
-                value: ''
+                value: '',
+                validation: {
+                    required: true
+                },
+                valid: false
             },
             mobileNumber: {
                 elementType: 'input',
                 elementConfig: {
                     type: 'number',
-                    placeholder: 'Enter Mobile Number'
+                    placeholder: 'Mobile'
                 },
-                value: ''
+                value: '',
+                validation: {
+                    required: true,
+                    minLength: 10
+                },
+                valid: false
             },
             password: {
                 elementType: 'input',
@@ -28,7 +36,12 @@ class Login extends Component {
                     type: 'password',
                     placeholder: 'Password'
                 },
-                value: ''
+                value: '',
+                validation: {
+                    required: true,
+                    minLength: 6
+                },
+                valid: false
             }
         }
 
@@ -57,8 +70,28 @@ class Login extends Component {
             ...updatedLoginForm[inputIdentifier]
         }
         updatedLonginFormElement.value = event.target.value;
+        updatedLonginFormElement.valid = this.checkValidity(updatedLonginFormElement.value, updatedLonginFormElement.validation);
         updatedLoginForm[inputIdentifier] = updatedLonginFormElement;
+        console.log(updatedLonginFormElement);
         this.setState({ loginForm: updatedLoginForm })
+    }
+
+    checkValidity(value, rule) {
+        let isValid = true;
+
+        if (rule.required) {
+            isValid = (value.trim() !== "") && isValid;
+        }
+
+        if (rule.minLength) {
+            isValid = (value.length >= rule.minLength) && isValid;
+        }
+
+        if (rule.maxLength) {
+            isValid = (value.length <= rule.maxLength) && isValid;
+        }
+
+        return isValid;
     }
 
     render() {
@@ -77,7 +110,8 @@ class Login extends Component {
                         elementType={formElement.config.elementType}
                         elementConfig={formElement.config.elementConfig}
                         value={formElement.config.value}
-                        changed={(event) => this.inputChangedHandler(event, formElement.id)} />
+                        changed={(event) => this.inputChangedHandler(event, formElement.id)}
+                        valid={!formElement.config.valid} />
                 ))}
                 <br />
                 <input className="btn btn-primary float-right" type="submit" value="Login"></input>

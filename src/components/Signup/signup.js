@@ -11,7 +11,11 @@ class Signup extends Component {
                     type: 'text',
                     placeholder: 'Name'
                 },
-                value: ''
+                value: '',
+                validation: {
+                    required: true
+                },
+                valid: false
             },
             email: {
                 elementType: 'input',
@@ -19,7 +23,11 @@ class Signup extends Component {
                     type: 'email',
                     placeholder: 'Email'
                 },
-                value: ''
+                value: '',
+                validation: {
+                    required: true
+                },
+                valid: false
             },
             mobileNumber: {
                 elementType: 'input',
@@ -27,7 +35,11 @@ class Signup extends Component {
                     type: 'number',
                     placeholder: 'Mobile'
                 },
-                value: ''
+                value: '',
+                validation: {
+                    required: true
+                },
+                valid: false
             },
             password: {
                 elementType: 'input',
@@ -35,7 +47,11 @@ class Signup extends Component {
                     type: 'password',
                     placeholder: 'Password'
                 },
-                value: ''
+                value: '',
+                validation: {
+                    required: true
+                },
+                valid: false
             },
             passwordConfirm: {
                 elementType: 'input',
@@ -43,7 +59,11 @@ class Signup extends Component {
                     type: 'password',
                     placeholder: 'Confirm Password'
                 },
-                value: ''
+                value: '',
+                validation: {
+                    required: true
+                },
+                valid: false
             }
         }
 
