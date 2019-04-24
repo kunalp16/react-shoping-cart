@@ -6,14 +6,14 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faCheckSquare, faCoffee, faTrashAlt, faStar, faHeart } from '@fortawesome/free-solid-svg-icons'
 
-import Header from './Components/Header/header';
-import Footer from './Components/Footer/footer';
-import ProductCatalog from './Components/ProductCatalog/productCatalog';
+import Header from '../src/components/Header/header';
+import Footer from '../src/components/Footer/footer';
+import ProductCatalog from '../src/components/ProductCatalog/productCatalog';
 import BannerAndOfferZone from './Container/BannerAndOfferzone/bannerNofferzone'
-import Login from './Components/Login/login';
-import MyCart from './Components/MyCart/myCart';
-import Wishlist from './Components/WishList/wishlist';
-import Signup from './Components/Signup/signup';
+import Login from '../src/components/Login/login';
+import MyCart from '../src/components/MyCart/myCart';
+import Wishlist from '../src/components/WishList/wishlist';
+import Signup from '../src/components/Signup/signup';
 
 library.add(fab, faCheckSquare, faCoffee, faTrashAlt, faStar, faHeart)
 

@@ -8,6 +8,8 @@
   padding: 0 2px;
   min-width: 35px;
   text-align: center;
+  border: 0;
+  width: 2%;
 }
 .plus {
   cursor: pointer;
@@ -45,10 +47,7 @@ span {
   -moz-user-select: none;
   -ms-user-select: none;
 }
-input {
-  border: 0;
-  width: 2%;
-}
+ 
 nput::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;

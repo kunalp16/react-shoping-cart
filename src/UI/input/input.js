@@ -6,16 +6,35 @@ const input = (props) => {
 
     let inputElement = null;
 
-    switch (props.inputtype) {
+    switch (props.elementType) {
 
         case ('input'):
-            inputElement = <input className="form-control" onChange={props.changed} {...props} />;
+            inputElement = (<input
+                className="form-control"
+                {...props.elementConfig}
+                value={props.value}
+                onChange={props.changed}
+            />
+            );
             break;
         case ('textarea'):
-            inputElement = <textarea className="form-control" onChange={props.changed} {...props} />;
+            inputElement = (
+                <textarea
+                    className="form-control"
+                    {...props.elementConfig}
+                    onChange={props.changed}
+                    {...props}
+                />);
             break;
         default:
-            inputElement = <input className="form-control" onChange={props.changed} {...props} />;
+            inputElement = (
+                <input
+                    className="form-control"
+                    onChange={props.changed}
+                    {...props.elementConfig}
+                    {...props} 
+                    />
+            );
             break;
 
     }

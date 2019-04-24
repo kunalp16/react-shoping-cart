@@ -7,7 +7,7 @@ class Login extends Component {
     state = {
         loginForm: {
             email: {
-                elementtype: 'input',
+                elementType: 'input',
                 elementConfig: {
                     type: 'text',
                     placeholder: 'Enter Email'
@@ -15,7 +15,7 @@ class Login extends Component {
                 value: ''
             },
             mobileNumber: {
-                elementtype: 'input',
+                elementType: 'input',
                 elementConfig: {
                     type: 'number',
                     placeholder: 'Enter Mobile Number'
@@ -23,9 +23,9 @@ class Login extends Component {
                 value: ''
             },
             password: {
-                elementtype: 'input',
+                elementType: 'input',
                 elementConfig: {
-                    type: 'Password',
+                    type: 'password',
                     placeholder: 'Password'
                 },
                 value: ''
@@ -34,31 +34,33 @@ class Login extends Component {
 
     }
 
-    // orderHandler = (event) => {
-    //     event.preventDefault();
-    //     // this.setState({ loading: true });
-    //     const formData = {};
-    //     for (let formElementIdentifier in this.state.loginForm) {
-    //         formData[formElementIdentifier] = this.state.loginForm[formElementIdentifier].value;
-    //     }
-    //     const logindata = {
-    //         loginData: formData
-    //     }
-       
-    // }
+    signInSubmitHandler = (event) => {
+        event.preventDefault();
+        // this.setState({ loading: true });
+        const formData = {};
+        for (let formElementIdentifier in this.state.loginForm) {
+            formData[formElementIdentifier] = this.state.loginForm[formElementIdentifier].value;
+        }
+        const loginFormData = {
+            loginData: formData
+        }
+
+        console.log(loginFormData);
+
+    }
 
     inputChangedHandler = (event, inputIdentifier) => {
         const updatedLoginForm = {
             ...this.state.loginForm
-        };
-        const updatedFormElement = {
+        }
+        const updatedLonginFormElement = {
             ...updatedLoginForm[inputIdentifier]
-        };
-        updatedFormElement.value = event.target.value;
-        updatedLoginForm[inputIdentifier] = updatedFormElement;
-        this.setState({ loginForm: updatedLoginForm });
+        }
+        updatedLonginFormElement.value = event.target.value;
+        updatedLoginForm[inputIdentifier] = updatedLonginFormElement;
+        this.setState({ loginForm: updatedLoginForm })
     }
-    
+
     render() {
         const formElementsArray = [];
         for (let key in this.state.loginForm) {
@@ -68,36 +70,23 @@ class Login extends Component {
             });
         }
         let form = (
-            <form onSubmit={this.orderHandler}>
+            <form onSubmit={this.signInSubmitHandler}>
                 {formElementsArray.map(formElement => (
                     <Input
                         key={formElement.id}
-                        elementtype={formElement.config.elementtype}
-                        elementconfig={formElement.config.elementConfig}
+                        elementType={formElement.config.elementType}
+                        elementConfig={formElement.config.elementConfig}
                         value={formElement.config.value}
-                        placeholder={formElement.config.elementConfig.placeholder}
                         changed={(event) => this.inputChangedHandler(event, formElement.id)} />
                 ))}
-                {/* <input type="button" btnType="Success">login</input> */}
+                <br />
+                <input className="btn btn-primary float-right" type="submit" value="Login"></input>
             </form>
         );
         return (
             <div className="row">
                 <div className={"col-md-5 offset-4 " + Classes.centerSection}>
                     <h2>Login</h2>
-                    {/* <form>
-                        <div className="form-group">
-                            <Input inputtype="input" type="email" htmlFor="email" label="Enter Email" id="email" placeholder="Enter Email" />
-                        </div>
-                        <div className="form-group">
-                            <Input inputtype="input" type="number" htmlFor="mobile" label="Mobile Number" id="mobile" placeholder="Enter Mobile Number" />
-                        </div>
-                        <div className="form-group">
-                            <Input inputtype="input" type="password" htmlFor="password" label="Password" id="password" placeholder="Password" />
-                            <small id="nameHelp" className="form-text text-muted">Password createria</small>
-                        </div>
-                        <button type="submit" className="btn btn-primary">Login</button>
-                    </form> */}
                     {form}
                 </div>
             </div>
